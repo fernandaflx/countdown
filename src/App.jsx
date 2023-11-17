@@ -52,23 +52,51 @@ const CountdownTimer = () => {
   ];
 
   return (
-    <Flex width='100vw' height='100vh' flexDir='column' align='center' justify='center' backgroundImage={background} backgroundSize='cover' >
+    // <Flex width='100vw' height='100vh' flexDir='column' align='center' justify='center' backgroundImage={background} backgroundSize='cover' >
+    //   <Stack height='100vh' align='center' justify='center'>
+    //     <Text textAlign='center' fontSize='3vw' color='#fefefe'>
+    //       Contando os dias pra te ver <span role="img" style={{ fontSize: '2vw' }} aria-label="coração">❤️</span>
+    //     </Text>
+    //     <HStack align='center'>
+
+    //       {numbers.map((number, i) => (
+    //         <Box align='center' key={i}>
+    //           <Center
+    //             width='9vw' height='10vw'
+    //             borderRadius='14px' bg='#CBC0D3' fontSize='7vw'>
+    //             {number.value}
+    //           </Center>
+
+    //           <Text
+    //             fontSize='1.5vw' mt='1.5vw'
+    //             color='#fefefe'
+    //           >
+    //             {number.label}
+    //           </Text>
+    //         </Box>
+    //       ))}
+    //     </HStack>
+
+    //   </Stack>
+    // </Flex>
+
+    <Flex width='100vw' height='100vh' flexDir='column' align='center' justify='center' backgroundImage={background} backgroundSize='cover'>
       <Stack height='100vh' align='center' justify='center'>
-        <Text textAlign='center' fontSize='3vw' color='#fefefe'>
+        <Text textAlign='center' fontSize={['5vw', '3vw', '2vw']} color='#fefefe'>
           Contando os dias pra te ver <span role="img" style={{ fontSize: '2vw' }} aria-label="coração">❤️</span>
         </Text>
         <HStack align='center'>
 
           {numbers.map((number, i) => (
-            <Box align='center' flex={2} key={i}>
+            <Box align='center' key={i}>
               <Center
-                width='9vw' height='10vw'
-                borderRadius='14px' bg='#CBC0D3' fontSize='7vw'>
+                width={['20vw', '15vw', '9vw']} height={['20vw', '15vw', '10vw']}
+                borderRadius='14px' bg='#CBC0D3' fontSize={['10vw', '7vw', '5vw']}>
                 {number.value}
               </Center>
 
               <Text
-                fontSize='1.5vw' mt='1.5vw'
+                fontSize={['3vw', '2vw', '1.5vw']} mt={['1.5vw', '1vw', '0.5vw']}
                 color='#fefefe'
               >
                 {number.label}
@@ -76,9 +104,9 @@ const CountdownTimer = () => {
             </Box>
           ))}
         </HStack>
-
       </Stack>
     </Flex>
+
   );
 };
 
