@@ -1,5 +1,6 @@
 import { Box, Center, Flex, HStack, Stack, Text, VStack } from "@chakra-ui/react";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import background from './assets/background.svg'
 
 const CountdownTimer = () => {
   const targetDate = new Date("2023-11-25T00:00:00").getTime();
@@ -10,7 +11,6 @@ const CountdownTimer = () => {
     const timeDifference = targetDate - now;
 
     if (timeDifference <= 0) {
-      // O tempo já passou, então exibimos 0 para todos os campos
       return {
         days: 0,
         hours: 0,
@@ -45,26 +45,32 @@ const CountdownTimer = () => {
   }, []);
 
   const numbers = [
-    { label: 'DAYS', value: remainingTime.days },
-    { label: 'HOURS', value: remainingTime.hours },
-    { label: 'MINUTES', value: remainingTime.minutes },
-    { label: 'SECONDS', value: remainingTime.seconds },
+    { label: 'DIAS', value: remainingTime.days },
+    { label: 'HORAS', value: remainingTime.hours },
+    { label: 'MINUTOS', value: remainingTime.minutes },
+    { label: 'SEGUNDOS', value: remainingTime.seconds },
   ];
 
   return (
-    <Flex width='full' height='full' flexDir='column' align='center' justify='center' >
+    <Flex width='100vw' height='100vh' flexDir='column' align='center' justify='center' backgroundImage={background} backgroundSize='cover' >
       <Stack height='100vh' align='center' justify='center'>
-        <Text textAlign='center'>waiting for u</Text>
+        <Text textAlign='center' fontSize='3vw' color='#fefefe'>
+          Contando os dias pra te ver
+        </Text>
         <HStack align='center'>
 
           {numbers.map((number, i) => (
-            <Box align='center' key={i}>
-
-              <Center width='6.5rem' height='7rem' bg='black' borderRadius='14px' fontSize='4rem'>
+            <Box align='center' flex={2} key={i}>
+              <Center
+                width='9vw' height='10vw'
+                borderRadius='14px' bg='#CBC0D3' fontSize='7vw'>
                 {number.value}
               </Center>
 
-              <Text fontSize='32px'>
+              <Text
+                fontSize='1.5vw' mt='1.5vw'
+                color='#fefefe'
+              >
                 {number.label}
               </Text>
             </Box>
@@ -72,7 +78,6 @@ const CountdownTimer = () => {
         </HStack>
 
       </Stack>
-      {/* <p>{`${remainingTime.days} days, ${remainingTime.hours} hours, ${remainingTime.minutes} minutes, ${remainingTime.seconds} seconds`}</p> */}
     </Flex>
   );
 };
