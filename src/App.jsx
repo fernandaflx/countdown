@@ -55,7 +55,7 @@ const CountdownTimer = () => {
     <Flex width='100vw' height='100vh' flexDir='column' align='center' justify='center' backgroundImage={background} backgroundSize='cover' >
       <Stack height='100vh' align='center' justify='center'>
         <Text textAlign='center' fontSize='3vw' color='#fefefe'>
-          Contando os dias pra te ver
+          Contando os dias pra te ver <span role="img" style={{ fontSize: '2vw' }} aria-label="coração">❤️</span>
         </Text>
         <HStack align='center'>
 
