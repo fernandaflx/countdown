@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import background from './assets/background.svg'
 
 const CountdownTimer = () => {
-  const targetDate = new Date("2023-11-25T00:00:00").getTime();
+  const targetDate = new Date("2023-11-25T06:20:00").getTime();
   const [remainingTime, setRemainingTime] = useState(calculateTimeRemaining());
 
   function calculateTimeRemaining() {
